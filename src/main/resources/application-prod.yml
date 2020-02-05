@@ -1,0 +1,3 @@
+irect:
+  endpoint:
+    getAllDetails: http://localhost/ms

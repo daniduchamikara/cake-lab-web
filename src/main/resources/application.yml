@@ -1,0 +1,47 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: cake-lab-api-web
+#  security:
+#    enabled: false
+
+server:
+  port: 8339
+  context-path: /cake-lab-web
+
+#security:
+#  basic:
+#    enabled: false
+
+management:
+  security:
+    enabled: false
+  context-path: /management
+
+
+eureka:
+    instance:
+      instanceId: cake-lab-web
+      metadata-map:
+        management:
+          context-path: /cake-lab-web/management
+      health-check-url-path: /cake-lab-web/management/health
+
+logger:
+    perf:
+      controller:
+          name: CONTROLLER
+      service:
+          name: SERVICE
+      integration:
+          name: INTEGRATION
+      repository:
+          name: REPOSITORY
+
+
+requestResponseRestTemplate:
+  readTimeout: 20000
+  connectionTimeout: 20000
+
+
